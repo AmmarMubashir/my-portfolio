@@ -51,11 +51,11 @@ export default function Hero() {
               I build exceptional and accessible digital experiences for the
               web, focusing on responsive design and modern technologies.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex  space-x-4">
               <motion.a
                 href="#projects"
                 whileHover={{ x: 5 }}
-                className="inline-flex items-center px-6 py-3 bg-[#64FFDA] text-[#0A192F] rounded font-medium transition-colors hover:bg-[#4CD3A9]"
+                className="inline-flex w-max items-center px-6 py-3 bg-[#64FFDA] text-[#0A192F] rounded font-medium transition-colors hover:bg-[#4CD3A9]"
               >
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -63,7 +63,7 @@ export default function Hero() {
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center px-6 py-3 border border-[#64FFDA] text-[#64FFDA] rounded font-medium transition-colors hover:bg-[#64FFDA]/10"
+                className="inline-flex w-max items-center px-6 py-3 border border-[#64FFDA] text-[#64FFDA] rounded font-medium transition-colors hover:bg-[#64FFDA]/10"
               >
                 Contact Me
               </motion.a>
