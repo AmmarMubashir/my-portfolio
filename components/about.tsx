@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -27,16 +27,22 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-[#64FFDA] mb-4">Who I Am</h3>
+              <h3 className="text-xl font-bold text-[#64FFDA] mb-4">
+                Who I Am
+              </h3>
               <p className="text-gray-300 mb-4">
-                I'm a passionate frontend developer with 5+ years of experience creating beautiful, functional, and
-                user-centered digital experiences. With a strong foundation in HTML, CSS, and JavaScript, combined with
-                expertise in modern frameworks like React, I bring creative ideas to life.
+                I'm a passionate frontend developer with 2+ years of experience
+                creating beautiful, functional, and user-centered digital
+                experiences. With a strong foundation in HTML, CSS, and
+                JavaScript, combined with expertise in modern frameworks like
+                React, Next, I bring creative ideas to life.
               </p>
               <p className="text-gray-300 mb-6">
-                Throughout my career, I've collaborated with talented individuals to create digital products for both
-                business and consumer use. I'm quietly confident, naturally curious, and perpetually working on
-                improving my skills one design problem at a time.
+                Throughout my career, I've collaborated with talented
+                individuals to create digital products for both business and
+                consumer use. I'm quietly confident, naturally curious, and
+                perpetually working on improving my skills one design problem at
+                a time.
               </p>
 
               <div className="flex justify-center md:justify-start">
@@ -52,6 +58,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

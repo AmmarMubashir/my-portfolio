@@ -1,18 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { GitlabIcon as GitHub, Linkedin, Twitter, Instagram, Mail } from "lucide-react"
+import { motion } from "framer-motion";
+
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Mail,
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   const socialLinks = [
-    { icon: <GitHub className="h-5 w-5" />, href: "https://github.com", label: "GitHub" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: <Twitter className="h-5 w-5" />, href: "https://twitter.com", label: "Twitter" },
-    { icon: <Instagram className="h-5 w-5" />, href: "https://instagram.com", label: "Instagram" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:eric@example.com", label: "Email" },
-  ]
+    {
+      icon: <Github className="h-5 w-5" />,
+      href: "https://github.com/AmmarMubashir",
+      label: "GitHub",
+    },
+    {
+      icon: <Linkedin className="h-5 w-5" />,
+      href: "https://www.linkedin.com/in/ammar-mubashir/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Mail className="h-5 w-5" />,
+      href: "mailto:muhammadammarmubashir@gmail.com",
+      label: "Email",
+    },
+    {
+      icon: <FaWhatsapp className="h-5 w-5" />,
+      href: "https://wa.me/03135769671",
+      label: "Email",
+    },
+  ];
 
   return (
     <footer className="py-8 bg-[#0A192F] border-t border-[#1E3A5F]">
@@ -25,7 +46,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="mb-6"
           >
-            <div className="text-2xl font-bold text-[#64FFDA]">EM.</div>
+            <div className="text-2xl font-bold text-[#64FFDA]">AM.</div>
           </motion.div>
 
           <motion.div
@@ -57,12 +78,11 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-gray-500 text-sm text-center"
           >
-            <p>&copy; {currentYear} Eric Anderson McNicholas. All rights reserved.</p>
-            <p className="mt-2">Designed and built with ❤️</p>
+            <p>&copy; 2023 Ammar Mubashir. All rights reserved.</p>
+           
           </motion.div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

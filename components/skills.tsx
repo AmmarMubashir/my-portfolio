@@ -1,39 +1,78 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
   FaJs,
+  FaBootstrap,
   FaReact,
-  FaVuejs,
   FaNodeJs,
   FaSass,
   FaFigma,
   FaGitAlt,
+  FaGithub,
   FaDocker,
   FaNpm,
-} from "react-icons/fa"
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiGraphql } from "react-icons/si"
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMui,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+} from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 
 export default function Skills() {
   const skills = [
     { icon: <FaHtml5 className="h-8 w-8 text-[#E34F26]" />, name: "HTML5" },
     { icon: <FaCss3Alt className="h-8 w-8 text-[#1572B6]" />, name: "CSS3" },
     { icon: <FaJs className="h-8 w-8 text-[#F7DF1E]" />, name: "JavaScript" },
-    { icon: <SiTypescript className="h-8 w-8 text-[#3178C6]" />, name: "TypeScript" },
+    {
+      icon: <FaBootstrap className="h-8 w-8 text-[#8513F5]" />,
+      name: "Bootstrap",
+    },
+    {
+      icon: <SiTypescript className="h-8 w-8 text-[#3178C6]" />,
+      name: "TypeScript",
+    },
     { icon: <FaReact className="h-8 w-8 text-[#61DAFB]" />, name: "React" },
     { icon: <SiNextdotjs className="h-8 w-8 text-white" />, name: "Next.js" },
-    { icon: <FaVuejs className="h-8 w-8 text-[#4FC08D]" />, name: "Vue.js" },
-    { icon: <SiTailwindcss className="h-8 w-8 text-[#06B6D4]" />, name: "Tailwind CSS" },
+    {
+      icon: <SiTailwindcss className="h-8 w-8 text-[#06B6D4]" />,
+      name: "Tailwind CSS",
+    },
+    {
+      icon: <SiMui className="h-8 w-8 text-[#0073E6]" />,
+      name: "Material UI",
+    },
     { icon: <FaSass className="h-8 w-8 text-[#CC6699]" />, name: "Sass" },
     { icon: <FaNodeJs className="h-8 w-8 text-[#339933]" />, name: "Node.js" },
-    { icon: <SiGraphql className="h-8 w-8 text-[#E10098]" />, name: "GraphQL" },
+    {
+      icon: <SiExpress className="h-8 w-8 text-[#FFFFFF]" />,
+      name: "Express js",
+    },
+    {
+      icon: <SiMongodb className="h-8 w-8 text-[#00E661]" />,
+      name: "Mongodb",
+    },
+    {
+      icon: <SiFirebase className="h-8 w-8 text-[#DD2C00]" />,
+      name: "Firebase",
+    },
+    {
+      icon: <GrMysql className="h-8 w-8 text-[#00758F]" />,
+      name: "SQL",
+    },
     { icon: <FaFigma className="h-8 w-8 text-[#F24E1E]" />, name: "Figma" },
     { icon: <FaGitAlt className="h-8 w-8 text-[#F05032]" />, name: "Git" },
+    { icon: <FaGithub className="h-8 w-8 text-[#FFFFFF]" />, name: "GitHub" },
     { icon: <FaDocker className="h-8 w-8 text-[#2496ED]" />, name: "Docker" },
     { icon: <FaNpm className="h-8 w-8 text-[#CB3837]" />, name: "npm" },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20 bg-[#0A192F]/90">
@@ -69,6 +108,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

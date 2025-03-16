@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, GitlabIcon as GitHub } from "lucide-react"
-import Image from "next/image"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, GitlabIcon as GitHub } from "lucide-react";
+import Image from "next/image";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeTab, setActiveTab] = useState("all");
 
   const projects = [
     {
       id: 1,
       title: "E-commerce Dashboard",
-      description: "Admin dashboard for managing products, orders, and customers with real-time analytics.",
+      description:
+        "Admin dashboard for managing products, orders, and customers with real-time analytics.",
       image: "/placeholder.svg?height=300&width=500",
       category: "web",
       tags: ["React", "Node.js", "MongoDB", "Express"],
@@ -20,7 +21,8 @@ export default function Projects() {
     {
       id: 2,
       title: "Travel App UI",
-      description: "Mobile application UI design for a travel booking platform with interactive maps.",
+      description:
+        "Mobile application UI design for a travel booking platform with interactive maps.",
       image: "/placeholder.svg?height=300&width=500",
       category: "mobile",
       tags: ["React Native", "Firebase", "Google Maps API"],
@@ -28,7 +30,8 @@ export default function Projects() {
     {
       id: 3,
       title: "Personal Finance Tool",
-      description: "Web app for tracking expenses, income, and financial goals with data visualization.",
+      description:
+        "Web app for tracking expenses, income, and financial goals with data visualization.",
       image: "/placeholder.svg?height=300&width=500",
       category: "web",
       tags: ["Vue.js", "TypeScript", "D3.js", "Firebase"],
@@ -36,7 +39,8 @@ export default function Projects() {
     {
       id: 4,
       title: "Social Media Dashboard",
-      description: "Comprehensive analytics dashboard for social media managers to track performance.",
+      description:
+        "Comprehensive analytics dashboard for social media managers to track performance.",
       image: "/placeholder.svg?height=300&width=500",
       category: "web",
       tags: ["React", "Redux", "Node.js", "PostgreSQL"],
@@ -44,7 +48,8 @@ export default function Projects() {
     {
       id: 5,
       title: "Fitness Tracker App",
-      description: "Mobile app for tracking workouts, nutrition, and progress with personalized recommendations.",
+      description:
+        "Mobile app for tracking workouts, nutrition, and progress with personalized recommendations.",
       image: "/placeholder.svg?height=300&width=500",
       category: "mobile",
       tags: ["React Native", "GraphQL", "MongoDB"],
@@ -52,20 +57,24 @@ export default function Projects() {
     {
       id: 6,
       title: "AI Content Generator",
-      description: "Web app that uses AI to generate marketing content for various platforms.",
+      description:
+        "Web app that uses AI to generate marketing content for various platforms.",
       image: "/placeholder.svg?height=300&width=500",
       category: "web",
       tags: ["Next.js", "OpenAI API", "Tailwind CSS"],
     },
-  ]
+  ];
 
-  const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
 
   return (
     <section id="projects" className="py-20 bg-[#0A192F]/80">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -82,7 +91,9 @@ export default function Projects() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
-                  activeTab === tab ? "bg-[#64FFDA] text-[#0A192F]" : "bg-[#112240] text-gray-300 hover:bg-[#172A45]"
+                  activeTab === tab
+                    ? "bg-[#64FFDA] text-[#0A192F]"
+                    : "bg-[#112240] text-gray-300 hover:bg-[#172A45]"
                 }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -119,11 +130,16 @@ export default function Projects() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
                   <p className="text-gray-400 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, i) => (
-                      <span key={i} className="text-xs px-2 py-1 rounded bg-[#1E3A5F] text-[#64FFDA]">
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-1 rounded bg-[#1E3A5F] text-[#64FFDA]"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -153,6 +169,5 @@ export default function Projects() {
         </AnimatePresence>
       </div>
     </section>
-  )
+  );
 }
-

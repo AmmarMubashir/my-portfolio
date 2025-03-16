@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface NavbarProps {
-  activeSection: string
+  activeSection: string;
 }
 
 export default function Navbar({ activeSection }: NavbarProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY
+      const offset = window.scrollY;
       if (offset > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", id: "home" },
@@ -33,18 +33,18 @@ export default function Navbar({ activeSection }: NavbarProps) {
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact" },
-  ]
+  ];
 
   const scrollToSection = (sectionId: string) => {
-    setIsOpen(false)
-    const element = document.getElementById(sectionId)
+    setIsOpen(false);
+    const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 80,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   return (
     <motion.header
@@ -52,7 +52,9 @@ export default function Navbar({ activeSection }: NavbarProps) {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 ${
-        scrolled ? "bg-[#0A192F]/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        scrolled
+          ? "bg-[#0A192F]/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       } transition-all duration-300`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -63,7 +65,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-2xl font-bold text-[#64FFDA]"
           >
-            <a href="#home">EM.</a>
+            <a href="#home">AM.</a>
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -83,7 +85,10 @@ export default function Navbar({ activeSection }: NavbarProps) {
             ))}
           </div>
 
-          <button className="md:hidden text-gray-300 hover:text-[#64FFDA]" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden text-gray-300 hover:text-[#64FFDA]"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -104,7 +109,9 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`py-2 px-4 text-sm font-medium transition-colors ${
-                  activeSection === item.id ? "text-[#64FFDA] bg-[#172A45]" : "text-gray-300"
+                  activeSection === item.id
+                    ? "text-[#64FFDA] bg-[#172A45]"
+                    : "text-gray-300"
                 } rounded hover:bg-[#172A45] hover:text-[#64FFDA]`}
               >
                 {item.name}
@@ -114,6 +121,5 @@ export default function Navbar({ activeSection }: NavbarProps) {
         </motion.div>
       )}
     </motion.header>
-  )
+  );
 }
-

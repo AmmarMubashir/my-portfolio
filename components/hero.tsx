@@ -1,13 +1,16 @@
-"use client"
+"use client";
 
-import { TypeAnimation } from "react-type-animation"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen pt-24 flex items-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen pt-24 flex items-center relative overflow-hidden"
+    >
       <div className="absolute top-0 right-0 w-full h-full">
         <div className="absolute top-0 left-0 w-full h-full bg-[#0A192F]/90 z-10"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#0A192F] to-transparent z-20"></div>
@@ -22,18 +25,20 @@ export default function Hero() {
             className="order-2 md:order-1"
           >
             <p className="text-[#64FFDA] mb-4 font-medium">Hello, I'm</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">Eric Anderson McNicholas</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+              Ammar Mubashir
+            </h1>
             <h2 className="text-2xl md:text-3xl text-gray-300 mb-6 h-10">
               A{" "}
               <TypeAnimation
                 sequence={[
                   "Frontend Developer",
                   2000,
-                  "UI/UX Designer",
+                  "React js Developer",
+                  2000,
+                  "Next js Developer",
                   2000,
                   "Creative Coder",
-                  2000,
-                  "Web Enthusiast",
                   2000,
                 ]}
                 wrapper="span"
@@ -43,8 +48,8 @@ export default function Hero() {
               />
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg">
-              I build exceptional and accessible digital experiences for the web, focusing on responsive design and
-              modern technologies.
+              I build exceptional and accessible digital experiences for the
+              web, focusing on responsive design and modern technologies.
             </p>
             <div className="flex space-x-4">
               <motion.a
@@ -72,13 +77,17 @@ export default function Hero() {
             className="order-1 md:order-2 flex justify-center"
           >
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#64FFDA]">
-              <Image src="/placeholder.svg?height=350&width=350" alt="Eric Anderson" fill className="object-cover" />
-              <div className="absolute inset-0 bg-[#64FFDA]/20 hover:bg-transparent transition-colors duration-300" />
+              <Image
+                src="/profile.jpeg?height=350&width=350"
+                alt="Ammar"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 transition-colors duration-300" />
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
