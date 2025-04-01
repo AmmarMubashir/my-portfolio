@@ -1,31 +1,70 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Loader, Send } from "lucide-react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log(formState)
-    // Add form submission logic here
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validation: Check if any field is empty
+    if (
+      !formState.name ||
+      !formState.email ||
+      !formState.subject ||
+      !formState.message
+    ) {
+      toast.error("All fields are required!");
+      return;
+    }
+
+    setLoading(true);
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY!;
+
+    const templateParams = {
+      name: formState.name,
+      email: formState.email,
+      subject: formState.subject,
+      message: formState.message,
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      toast.success("Message sent successfully! ✅");
+
+      setFormState({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Email sending error:", error);
+      toast.error("Failed to send message. Please try again.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <section id="contact" className="py-20 bg-[#0A192F]">
@@ -42,7 +81,8 @@ export default function Contact() {
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#64FFDA] transform origin-left" />
           </h2>
           <p className="text-gray-400 mt-4 max-w-lg mx-auto">
-            Feel free to contact me for any project ideas or if you have any questions.
+            Feel free to contact me for any project ideas or if you have any
+            questions.
           </p>
         </motion.div>
 
@@ -57,7 +97,10 @@ export default function Contact() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2 text-sm">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-300 mb-2 text-sm"
+                >
                   Name
                 </label>
                 <input
@@ -71,7 +114,10 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2 text-sm">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-300 mb-2 text-sm"
+                >
                   Email
                 </label>
                 <input
@@ -86,7 +132,10 @@ export default function Contact() {
               </div>
             </div>
             <div className="mb-6">
-              <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm">
+              <label
+                htmlFor="subject"
+                className="block text-gray-300 mb-2 text-sm"
+              >
                 Subject
               </label>
               <input
@@ -100,7 +149,10 @@ export default function Contact() {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-300 mb-2 text-sm">
+              <label
+                htmlFor="message"
+                className="block text-gray-300 mb-2 text-sm"
+              >
                 Message
               </label>
               <textarea
@@ -116,15 +168,23 @@ export default function Contact() {
             <motion.button
               type="submit"
               whileHover={{ scale: 1.02 }}
-              className="w-full py-3 px-4 bg-[#64FFDA] text-[#0A192F] rounded font-medium flex items-center justify-center transition-colors hover:bg-[#4CD3A9]"
+              disabled={loading}
+              className={`w-full py-3 px-4 rounded font-medium flex items-center justify-center transition-colors ${
+                loading
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-[#64FFDA] hover:bg-[#4CD3A9] text-[#0A192F]"
+              }`}
             >
-              <Send className="h-4 w-4 mr-2" />
-              Send Message
+              {loading ? (
+                <Loader className="animate-spin h-4 w-4 mr-2" />
+              ) : (
+                <Send className="h-4 w-4 mr-2" />
+              )}
+              {loading ? "Sending..." : "Send Message"}
             </motion.button>
           </motion.form>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
