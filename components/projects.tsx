@@ -68,7 +68,7 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex justify-between">
-                    <motion.a
+                    {/* <motion.a
                       href={project.codeUrl}
                       target="_blank"
                       whileHover={{ scale: 1.05 }}
@@ -77,7 +77,7 @@ export default function Projects() {
                     >
                       <Github className="h-4 w-4 mr-1" />
                       Code
-                    </motion.a>
+                    </motion.a> */}
                     <motion.a
                       href={project.demoUrl}
                       target="_blank"

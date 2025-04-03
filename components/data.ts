@@ -4,7 +4,7 @@ const projects = [
     title: "Rawaan Pakistan",
     description:
       "A travel and tourism platform with an interactive user experience.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/rawaan.png",
     category: "web",
     tags: ["Next.js", "Tailwind CSS", "MongoDB", "Node.js"],
     codeUrl: "https://github.com/AmmarMubashir/Rawaan-Pakistan",
@@ -15,7 +15,7 @@ const projects = [
     title: "SoftDesk V2",
     description:
       "An enhanced version of the SoftDesk platform for managing projects and teams.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/softdesk.png",
     category: "web",
     tags: ["React", "Firebase", "Material UI"],
     codeUrl: "https://github.com/AmmarMubashir/SoftdeskV2",
@@ -26,7 +26,7 @@ const projects = [
     title: "Apona",
     description:
       "A modern web application for seamless online transactions and digital management.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/apona.png",
     category: "web",
     tags: ["Next.js", "Tailwind CSS", "Supabase"],
     codeUrl: "https://github.com/AmmarMubashir/Apona",
@@ -37,7 +37,7 @@ const projects = [
     title: "TechBuzzLab",
     description:
       "A low-code web solution for rapid application development and deployment.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/techbuzz.png",
     category: "web",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     codeUrl: "https://github.com/AmmarMubashir/low-code",
@@ -48,7 +48,7 @@ const projects = [
     title: "Gantry",
     description:
       "A web-based platform for managing and automating industrial workflows.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/gantry.png",
     category: "web",
     tags: ["Vue.js", "Django", "PostgreSQL"],
     codeUrl: "https://github.com/AmmarMubashir/Gantry-web",
@@ -59,7 +59,7 @@ const projects = [
     title: "Claims Crafter",
     description:
       "A claims management system designed for insurance and legal services.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/claimscrafter.png",
     category: "web",
     tags: ["React", "Firebase", "Redux"],
     codeUrl: "https://github.com/AmmarMubashir/claimscrafter",
@@ -70,7 +70,7 @@ const projects = [
     title: "Expense Tracker",
     description:
       "A personal finance management tool to track income and expenses.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/expense-tracker.png",
     category: "web",
     tags: ["Next.js", "MongoDB", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/next_expense_tracker",
@@ -81,7 +81,7 @@ const projects = [
     title: "Mini Calendar Watch",
     description:
       "A simple calendar watch application with date and time functionality.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/mini-calendar.png",
     category: "web",
     tags: ["React", "CSS", "JavaScript"],
     codeUrl: "https://github.com/AmmarMubashir/MiniCalendarWatch",
@@ -89,10 +89,10 @@ const projects = [
   },
   {
     id: 9,
-    title: "Weather App (One-Page)",
+    title: "Weather App",
     description:
       "A weather forecasting app providing real-time weather updates.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/weather.png",
     category: "web",
     tags: ["React", "OpenWeather API", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/weatherApp",
@@ -103,7 +103,7 @@ const projects = [
     title: "Food Website",
     description:
       "A modern and responsive food website showcasing different cuisines.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/food.png",
     category: "web",
     tags: ["HTML", "CSS", "JavaScript"],
     codeUrl: "https://github.com/AmmarMubashir/foodwebsite",
@@ -113,7 +113,7 @@ const projects = [
     id: 11,
     title: "Coffee Web",
     description: "A coffee-themed web page with an elegant UI and animations.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/coffe.png",
     category: "web",
     tags: ["React", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/coffe-web",
@@ -124,7 +124,7 @@ const projects = [
     title: "Ammar Portfolio",
     description:
       "A personal portfolio website to showcase projects and experience.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/ammar-portfolio.png",
     category: "portfolio",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
     codeUrl: "https://github.com/AmmarMubashir/ammar-portfolio",
@@ -135,7 +135,7 @@ const projects = [
     title: "Cloned Portfolio",
     description:
       "A portfolio website cloned with improved design and animations.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/cloned-portfolio.png",
     category: "portfolio",
     tags: ["Next.js", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/cloned-portfolio",
@@ -145,7 +145,7 @@ const projects = [
     id: 14,
     title: "Random Joke Generator",
     description: "A fun web app that generates random jokes using an API.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/random-joke.png",
     category: "fun",
     tags: ["JavaScript", "API", "React"],
     codeUrl: "https://github.com/AmmarMubashir/Random-joke-generator",
@@ -156,7 +156,7 @@ const projects = [
     title: "Zeeo World",
     description:
       "A futuristic web project featuring an innovative digital experience.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/zeeo-world.png",
     category: "web",
     tags: ["React", "Three.js"],
     codeUrl: "https://github.com/AmmarMubashir/zeeoWorld",
@@ -166,7 +166,7 @@ const projects = [
     id: 16,
     title: "Web Me",
     description: "A personal branding website with interactive UI elements.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/web-me.png",
     category: "portfolio",
     tags: ["React", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/web-me",
@@ -177,7 +177,7 @@ const projects = [
     title: "Portfolio Sample",
     description:
       "A sample portfolio website with modern design and responsiveness.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/portfolio-sample.png",
     category: "portfolio",
     tags: ["React", "Tailwind CSS"],
     codeUrl: "https://github.com/AmmarMubashir/portfolio-sample",
