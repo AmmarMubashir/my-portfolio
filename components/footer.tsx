@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Mail,
-} from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
@@ -79,7 +73,6 @@ export default function Footer() {
             className="text-gray-500 text-sm text-center"
           >
             <p>&copy; 2023 Ammar Mubashir. All rights reserved.</p>
-           
           </motion.div>
         </div>
       </div>

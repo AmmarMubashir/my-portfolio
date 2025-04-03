@@ -29,7 +29,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
   const navItems = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
-    { name: "Services", id: "services" },
+    // { name: "Services", id: "services" },
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact" },

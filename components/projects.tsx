@@ -2,73 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, GitlabIcon as GitHub } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import projects from "./data";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("all");
-
-  const projects = [
-    {
-      id: 1,
-      title: "E-commerce Dashboard",
-      description:
-        "Admin dashboard for managing products, orders, and customers with real-time analytics.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "web",
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-    },
-    {
-      id: 2,
-      title: "Travel App UI",
-      description:
-        "Mobile application UI design for a travel booking platform with interactive maps.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "mobile",
-      tags: ["React Native", "Firebase", "Google Maps API"],
-    },
-    {
-      id: 3,
-      title: "Personal Finance Tool",
-      description:
-        "Web app for tracking expenses, income, and financial goals with data visualization.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "web",
-      tags: ["Vue.js", "TypeScript", "D3.js", "Firebase"],
-    },
-    {
-      id: 4,
-      title: "Social Media Dashboard",
-      description:
-        "Comprehensive analytics dashboard for social media managers to track performance.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "web",
-      tags: ["React", "Redux", "Node.js", "PostgreSQL"],
-    },
-    {
-      id: 5,
-      title: "Fitness Tracker App",
-      description:
-        "Mobile app for tracking workouts, nutrition, and progress with personalized recommendations.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "mobile",
-      tags: ["React Native", "GraphQL", "MongoDB"],
-    },
-    {
-      id: 6,
-      title: "AI Content Generator",
-      description:
-        "Web app that uses AI to generate marketing content for various platforms.",
-      image: "/placeholder.svg?height=300&width=500",
-      category: "web",
-      tags: ["Next.js", "OpenAI API", "Tailwind CSS"],
-    },
-  ];
-
-  const filteredProjects =
-    activeTab === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeTab);
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section id="projects" className="py-20 bg-[#0A192F]/80">
@@ -84,36 +24,19 @@ export default function Projects() {
             Projects
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#64FFDA] transform origin-left" />
           </h2>
-
-          <div className="flex justify-center mt-8 space-x-4">
-            {["all", "web", "mobile"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
-                  activeTab === tab
-                    ? "bg-[#64FFDA] text-[#0A192F]"
-                    : "bg-[#112240] text-gray-300 hover:bg-[#172A45]"
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
         </motion.div>
 
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredProjects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
-                key={project.id}
+                key={`project-${project.id}-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -137,7 +60,7 @@ export default function Projects() {
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, i) => (
                       <span
-                        key={i}
+                        key={`tag-${tag}-${i}`}
                         className="text-xs px-2 py-1 rounded bg-[#1E3A5F] text-[#64FFDA]"
                       >
                         {tag}
@@ -146,17 +69,21 @@ export default function Projects() {
                   </div>
                   <div className="flex justify-between">
                     <motion.a
-                      href="#"
+                      href={project.codeUrl}
+                      target="_blank"
                       whileHover={{ scale: 1.05 }}
                       className="inline-flex items-center text-sm text-[#64FFDA] hover:underline"
+                      rel="noreferrer"
                     >
-                      <GitHub className="h-4 w-4 mr-1" />
+                      <Github className="h-4 w-4 mr-1" />
                       Code
                     </motion.a>
                     <motion.a
-                      href="#"
+                      href={project.demoUrl}
+                      target="_blank"
                       whileHover={{ scale: 1.05 }}
                       className="inline-flex items-center text-sm text-[#64FFDA] hover:underline"
+                      rel="noreferrer"
                     >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Live Demo
@@ -166,6 +93,15 @@ export default function Projects() {
               </motion.div>
             ))}
           </motion.div>
+          <div className="flex justify-center mt-12">
+            <motion.button
+              onClick={() => setShowAll(!showAll)}
+              whileHover={{ scale: 1.05 }}
+              className="px-6 py-2 rounded-md bg-[#1E3A5F] text-[#64FFDA] border border-[#64FFDA]/30 hover:bg-[#64FFDA]/10 transition-colors"
+            >
+              {showAll ? "See Less" : "See More"}
+            </motion.button>
+          </div>
         </AnimatePresence>
       </div>
     </section>
