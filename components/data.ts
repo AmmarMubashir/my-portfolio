@@ -1,6 +1,6 @@
 const projects = [
   {
-    id: 2,
+    id: 1,
     title: "Mystry Message",
     description:
       "An anonymous messaging web app that allows users to send and receive secret messages with a clean, interactive UI.",
@@ -54,6 +54,17 @@ const projects = [
   },
   {
     id: 5,
+    title: "Affonso Landing Page",
+    description:
+      "A sleek and responsive SaaS affiliate program landing page designed to drive conversions. Built with modern UI components and smooth animations to deliver an engaging user experience.",
+    image: "/affonso.png",
+    category: "web",
+    tags: ["Next.js", "Tailwind CSS", "Shadcn", "Framer Motion"],
+    codeUrl: "https://github.com/AmmarMubashir/Affonso",
+    demoUrl: "https://affonso-zeta.vercel.app/",
+  },
+  {
+    id: 6,
     title: "TechBuzzLab",
     description:
       "A low-code web solution for rapid application development and deployment.",
@@ -64,7 +75,7 @@ const projects = [
     demoUrl: "https://low-code-puce.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Gantry",
     description:
       "A web-based platform for managing and automating industrial workflows.",
@@ -75,7 +86,7 @@ const projects = [
     demoUrl: "https://gantry-web.vercel.app/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Claims Crafter",
     description:
       "A claims management system designed for insurance and legal services.",
@@ -86,7 +97,7 @@ const projects = [
     demoUrl: "https://claimscrafter.vercel.app/",
   },
   {
-    id: 8,
+    id: 9,
     title: "Expense Tracker",
     description:
       "A personal finance management tool to track income and expenses.",
@@ -97,7 +108,7 @@ const projects = [
     demoUrl: "https://expense-tracker-sooty-five.vercel.app/",
   },
   {
-    id: 9,
+    id: 10,
     title: "Mini Calendar Watch",
     description:
       "A simple calendar watch application with date and time functionality.",
@@ -108,7 +119,7 @@ const projects = [
     demoUrl: "https://mini-calendar-watch.vercel.app/",
   },
   {
-    id: 10,
+    id: 11,
     title: "Weather App",
     description:
       "A weather forecasting app providing real-time weather updates.",
@@ -119,7 +130,7 @@ const projects = [
     demoUrl: "https://weather-app-alpha-lovat.vercel.app/",
   },
   {
-    id: 11,
+    id: 12,
     title: "Food Website",
     description:
       "A modern and responsive food website showcasing different cuisines.",
@@ -130,7 +141,7 @@ const projects = [
     demoUrl: "https://foodwebsite-phi-seven.vercel.app/",
   },
   {
-    id: 12,
+    id: 13,
     title: "Coffee Web",
     description: "A coffee-themed web page with an elegant UI and animations.",
     image: "/coffe.png",
@@ -140,7 +151,7 @@ const projects = [
     demoUrl: "https://coffe-web-alpha.vercel.app/",
   },
   {
-    id: 13,
+    id: 14,
     title: "Ammar Portfolio",
     description:
       "A personal portfolio website to showcase projects and experience.",
@@ -151,7 +162,7 @@ const projects = [
     demoUrl: "https://ammar-portfolio-six.vercel.app/",
   },
   {
-    id: 14,
+    id: 15,
     title: "Cloned Portfolio",
     description:
       "A portfolio website cloned with improved design and animations.",
@@ -162,7 +173,7 @@ const projects = [
     demoUrl: "https://cloned-portfolio-psi.vercel.app/",
   },
   {
-    id: 15,
+    id: 16,
     title: "Random Joke Generator",
     description: "A fun web app that generates random jokes using an API.",
     image: "/random-joke.png",
@@ -172,7 +183,7 @@ const projects = [
     demoUrl: "https://random-joke-generator-eight-murex.vercel.app/",
   },
   {
-    id: 16,
+    id: 17,
     title: "Zeeo World",
     description:
       "A futuristic web project featuring an innovative digital experience.",
@@ -183,7 +194,7 @@ const projects = [
     demoUrl: "https://zeeo-world.vercel.app/",
   },
   {
-    id: 17,
+    id: 18,
     title: "Web Me",
     description: "A personal branding website with interactive UI elements.",
     image: "/web-me.png",
@@ -193,7 +204,7 @@ const projects = [
     demoUrl: "https://web-me-seven.vercel.app/",
   },
   {
-    id: 18,
+    id: 19,
     title: "Portfolio Sample",
     description:
       "A sample portfolio website with modern design and responsiveness.",
