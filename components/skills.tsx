@@ -8,12 +8,12 @@ import {
   FaBootstrap,
   FaReact,
   FaNodeJs,
-  FaSass,
-  FaFigma,
+  // FaSass,
+  // FaFigma,
   FaGitAlt,
   FaGithub,
-  FaDocker,
-  FaNpm,
+  // FaDocker,
+  // FaNpm,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -22,9 +22,9 @@ import {
   SiMui,
   SiExpress,
   SiMongodb,
-  SiFirebase,
+  // SiFirebase,
 } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
+// import { GrMysql } from "react-icons/gr";
 
 export default function Skills() {
   const skills = [
@@ -49,7 +49,7 @@ export default function Skills() {
       icon: <SiMui className="h-8 w-8 text-[#0073E6]" />,
       name: "Material UI",
     },
-    { icon: <FaSass className="h-8 w-8 text-[#CC6699]" />, name: "Sass" },
+    // { icon: <FaSass className="h-8 w-8 text-[#CC6699]" />, name: "Sass" },
     { icon: <FaNodeJs className="h-8 w-8 text-[#339933]" />, name: "Node.js" },
     {
       icon: <SiExpress className="h-8 w-8 text-[#FFFFFF]" />,
@@ -59,19 +59,19 @@ export default function Skills() {
       icon: <SiMongodb className="h-8 w-8 text-[#00E661]" />,
       name: "Mongodb",
     },
-    {
-      icon: <SiFirebase className="h-8 w-8 text-[#DD2C00]" />,
-      name: "Firebase",
-    },
-    {
-      icon: <GrMysql className="h-8 w-8 text-[#00758F]" />,
-      name: "SQL",
-    },
-    { icon: <FaFigma className="h-8 w-8 text-[#F24E1E]" />, name: "Figma" },
+    // {
+    //   icon: <SiFirebase className="h-8 w-8 text-[#DD2C00]" />,
+    //   name: "Firebase",
+    // },
+    // {
+    //   icon: <GrMysql className="h-8 w-8 text-[#00758F]" />,
+    //   name: "SQL",
+    // },
+    // { icon: <FaFigma className="h-8 w-8 text-[#F24E1E]" />, name: "Figma" },
     { icon: <FaGitAlt className="h-8 w-8 text-[#F05032]" />, name: "Git" },
     { icon: <FaGithub className="h-8 w-8 text-[#FFFFFF]" />, name: "GitHub" },
-    { icon: <FaDocker className="h-8 w-8 text-[#2496ED]" />, name: "Docker" },
-    { icon: <FaNpm className="h-8 w-8 text-[#CB3837]" />, name: "npm" },
+    // { icon: <FaDocker className="h-8 w-8 text-[#2496ED]" />, name: "Docker" },
+    // { icon: <FaNpm className="h-8 w-8 text-[#CB3837]" />, name: "npm" },
   ];
 
   return (
